@@ -13,7 +13,7 @@ const typeDefs = gql`
 
   "Root Mutation type"
   type Mutation {
-    incrementTrackViews: 
+    incrementTrackViews(id: ID!): incrementTrackViewsResponse!
   }
 
   type incrementTrackViewsResponse {
