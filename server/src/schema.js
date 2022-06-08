@@ -1,6 +1,7 @@
 const { gql } = require('apollo-server');
 
 const typeDefs = gql`
+  "Root Query Type"
   type Query {
     "Query to get tracks array for the homepage grid"
     tracksForHome: [Track!]!
@@ -8,6 +9,22 @@ const typeDefs = gql`
     track(id: ID!): Track!
     "Fetch a specific module, provided a module's ID"
     module(id: ID!): Module!
+  }
+
+  "Root Mutation type"
+  type Mutation {
+    incrementTrackViews: 
+  }
+
+  type incrementTrackViewsResponse {
+    "status Code, represent the status of the mutation"
+    code: Int!
+    "Indicates whether the mutation was successful or not"
+    success: Boolean!
+    "Human readable message for the UI"
+    message: String!
+    "newly updated track after a successful mutation"
+    track: Track
   }
 
   "A track is a group of Modules that teaches about a specific topic"
